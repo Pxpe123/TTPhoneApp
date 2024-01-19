@@ -1,0 +1,17 @@
+{
+  "appId": "com.example.app",
+  "appName": "TTPhoneApp",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

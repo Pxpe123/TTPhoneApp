@@ -1,0 +1,87 @@
+{
+    "Main": {
+        "SkillOfTheDay": "/status/sotd.json",
+        "Serverplayers": "/status/widget/players.json",
+        "Position": "/status/map/positions.json"
+     },
+    "Leaderboards": {
+        "Bus": {
+          "Behemoth Completed": "/status/top10/bus_behemoth_completed",
+          "Fares_Earned": "/status/top10/bus_fares_earned",
+          "Money_Earned": "/status/top10/bus_money_earned",
+          "Route_Completed": "/status/top10/bus_route_completed"
+        },
+        "Trucking": {
+          "Concrete": "/status/top10/concrete_sold",
+          "Houses": "/status/top10/houses_crafted"
+        },
+        "Drops": {
+          "Collected": "/status/top10/drops_collected"
+        },
+        "Easter Eggs": {
+          "Pickup": "/status/top10/eastereggs_pickup"
+        },
+        "EMS": {
+          "Deliveries": "/status/top10/ems_deliveries",
+          "Streak_Record": "/status/top10/ems_streak_record"
+        },
+        "Firefighter": {
+          "Streak Record": "/status/top10/firefighter_streak_record",
+          "Earnings": "/status/top10/aerialfire_earnings",
+          "Extinguished": "/status/top10/aerialfire_finished",
+          "Extinguished_747fire": "/status/top10/aerialfire_finished_747fire",
+          "Extinguished_CG130h": "/status/top10/aerialfire_finished_cg130h",
+          "Extinguished_CL415f": "/status/top10/aerialfire_finished_cl415f",
+          "Extinguished_Tula": "/status/top10/aerialfire_finished_tula"
+        },
+        "Garbage": {
+          "Routes_Finished": "/status/top10/garbage_routes_finished",
+          "Trash_Collected": "/status/top10/garbage_trash_collected"
+        },
+        "Hunting": {
+          "Missions_Completed": "/status/top10/hunting_missions",
+          "Skin":"/status/top10/hunting_skin",
+          "Skin_Mission": "/status/top10/hunting_skin_mission",
+          "Zones_Cleared": "/status/top10/hunting_zones"
+        },
+        "HW22": {
+          "Zombies_Looted": "/status/top10/hw22_zombies_looted"
+        },
+        "Maid": {
+          "Max_eScans": "/status/top10/maid_maxscans"
+        }
+    },
+    "userInfo": {
+        "Main": {
+          "Wealth": "/status/wealth/${userID}"
+        },
+        "Misc": {
+          "SnowflakeUser": "/status/snowflake2user/${discordID}",
+          "userData": "/status/data/${userID}",
+          "userDataadv": "/status/dataadv/${userID}"
+        },
+        "Movement": {
+            "Distance_Driven": "/status/MP0_DIST_DRIVING_CAR",
+            "Distance_Sailed": "/status/MP0_DIST_DRIVING_BOAT",
+            "Distance_Swam": "/status/MP0_DIST_SWIMMING",
+            "Distance_Walked": "/status/MP0_DIST_WALKING",
+            "Distance_Ran": "/status/MP0_DIST_RUNNING",
+            "Distance_Flown_Plane": "/status/top10/MP0_DIST_DRIVING_PLANE",
+            "Distance_Flown_Heli": "/status/MP0_DIST_DRIVING_HELI",
+            "Driven_NearMiss": "/status/MP0_NUMBER_NEAR_MISS",
+            "Fastest_Speed": "/status/MP0_FASTEST_SPEED"
+        }
+    },
+    "Faction": {
+      "Info": "/status/faction/info.json",
+      "Members": "/status/faction/members.json",
+      "Balance": "/status/faction/balance.json",
+      "Perks": "/status/faction/perks.json",
+      "Size": "/status/faction/size.json",
+      "userfaq": "/status/getuserfaq/${userID}"
+    },
+    "Jobs": {
+      "Airline": "/status/airline.json"
+    }
+  }
+  

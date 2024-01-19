@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="UTF-8" />
+    <title>Awesome Capacitor App</title>
+    <meta name="viewport"
+        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script type="module"
+        src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+    <script nomodule
+        src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
+    <script type="module">
+        import { SplashScreen } from '@capacitor/splash-screen';
+        SplashScreen.show();
+    </script>
+    <script type="module">
+        import { CapacitorHttp, HttpResponse } from '@capacitor/core';
+
+        window.CapacitorHttp = CapacitorHttp;
+        window.HttpResponse = HttpResponse;
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/getEndpointData.js"></script>
+    <script src="./js/getServerData.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+</head>
+
+<body>
+    <capacitor-welcome></capacitor-welcome>
+    <div class="Main-Block">
+        <div class="Main-Top">
+        </div>
+        <div class="Main-Header">
+            TTStats
+        </div>
+        <div class="Main-Body">
+            <div class="Servers-Box-Outer">
+                <div class="ServerData-Title">
+                    Server Data
+                </div>
+                <div class="ServerData-Servers">
+                    <h3>Main</h3>
+                    <p id="MainDXP" style="margin-top: -17px; font-size: 14px;">DXP: </p>
+                    <p id="MainUptime">Uptime: 5343</p>
+                    <p id="MainPlayers">Players: 123</p>
+                    <p id="MainFreinds">Friends: </p>
+                </div>
+                <div class="ServerData-Servers">
+                    <h3>Beta</h3>
+                    <p id="BetaDXP" style="margin-top: -17px;  font-size: 14px;">DXP: </p>
+                    <p id="BetaUptime">Uptime: 123</p>
+                    <p id="BetaPlayers">Players: 123</p>
+                    <p id="BetaFreinds">Friends: </p>
+                </div>
+            </div>
+        </div>
+        <div class="Main-Footer"></div>
+    </div>
+</body>
+
+</html>
