@@ -15,7 +15,7 @@
     margin: 0;
     max-width: 100%;
     height: 100vh;
-    user-select: none;
+    user-select: ;
   }
   
   .Main-Block {
@@ -31,14 +31,14 @@
     position: relative;
     background-color: rgba(54, 54, 54, 0.611);
     margin-left: 20%;
-    padding-top: 3vh;
+    padding-top: 2vh;
     width: 60%;
-    height: 6vh;
+    height: 7vh;
     border-radius: var(--border-radius);
     text-align: center;
     text-decoration: underline;
     color: aqua;
-    font-size: 34px;
+    font-size: 4vh;
     margin-bottom: 3vh;
   }
   
@@ -46,15 +46,43 @@
     background-color: ;
     height: 79vh
   }
-  
+
   .Servers-Box-Outer {
-    background-color: aqua;
-    height: 30vh;
+    border-radius: var(--border-radius);
+    border: 2px #fff solid;
+    background-color: rgba(44, 44, 44, 0.538);
+    height: fit-content;
     width: 60%;
     margin-left: 20%;
-    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+}
+
+  .ServerData-Title {
+    color: rgba(255, 255, 255, 0.712);
+    font-size: 4vh;
+    text-align: center;
+    text-decoration: underline;
+}
+
+  .ServerBoxesWrapper {
+    display: flex;
+    justify-content: space-between;
   }
-  
+
+  .ServerData-Servers {
+    padding-left: 30px;
+    padding-bottom: 5px;
+    color: white;
+    width: 48%;
+}
+
+  .ServerData-Servers h3 {
+    font-size: 3vh;
+    text-align: left;
+    padding-left: 0px;
+}
+
   .Main-Footer {
     background-color: ;
     height: 7vh
