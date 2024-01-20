@@ -1,41 +1,16 @@
-import { CapacitorHttp, HttpResponse } from '@capacitor/core';
+const key = "L0S8ktFi2WlKaNntwjJZCY8Q6wOwAzggHu0PD";
+const targetUrl = `https://tycoon-2epova.users.cfx.re/status/widget/players.json`;
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
-// Example of a GET request
-const doGet = async () => {
-  const options = {
-    url: `https://tycoon-2epova.users.cfx.re/status/widget/players.json`,
-    params: { size: 'XL' },
-  };
-
-  try {
-    const response = await CapacitorHttp.get(options);
-    console.log(response);
-    // Handle the response as needed
-  } catch (error) {
-    console.error('Error:', error);
-    // Handle the error
-  }
+const headerData = {
+  'X-Tycoon-Key': key,
+  // Add any other headers if needed
 };
 
-// Example of a POST request. Note: data
-// can be passed as a raw JS Object (must be JSON serializable)
-const doPost = async () => {
-  const options = {
-    url: `https://tycoon-2epova.users.cfx.re/status/widget/players.json`,
-    headers: { 'X-Fake-Header': 'Fake-Value' },
-    data: { foo: 'bar' },
-  };
-
-  try {
-    const response = await CapacitorHttp.post(options);
-    console.log(response);
-    // Handle the response as needed
-  } catch (error) {
-    console.error('Error:', error);
-    // Handle the error
-  }
-};
-
-// Call the functions
-doGet();
-doPost();
+fetch(proxyUrl + targetUrl, {
+  method: 'GET',
+  headers: headerData, // You can include headers here if needed
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));

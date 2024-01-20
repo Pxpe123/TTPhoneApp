@@ -1,6 +1,9 @@
-const { CapacitorHttp, HttpResponse } = window;
 
-const config = '../src/assets/configs/config.json';
+const config = 'assets/configs/config.json'
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const baseUrl1 = 'https://tycoon-';
+const baseUrl2 = '.users.cfx.re';
+
 let userID;
 
 fetch(config)
@@ -18,7 +21,7 @@ fetch(config)
   });
 
 
-var keynames = "../src/assets/configs/keynames.json";
+var keynames = "assets/configs/keynames.json";
 
 var privatekey;
 var publickey;
@@ -130,29 +133,24 @@ async function GetData(type, keytype, server) {
         server = "2epova";
     }
 
-    const url = `https://tycoon-${server}.users.cfx.re${type}`;
+    const url = proxyUrl + baseUrl1 + server + baseUrl2 + type;
 
-    console.log(url, headerData);
-
-    const options = {
-        url,
-        headers: headerData,
-        method: 'GET',
-    };
-    
     try {
-        const response = await CapacitorHttp.request({ ...options, method: 'GET' })
-    
-        if (response.status === 200) {
-            return response.data;
-        } else {
-            throw new Error('Failed to fetch data');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}    
+        const response = await fetch(baseUrl1 + server + baseUrl2 + type, {
+            method: 'GET',
+        });
 
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data (${response.status} ${response.statusText})`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error in GetData:', error);
+        return null;
+    }
+}
 function GetTycoonKey(type) {
     if (config) {
         return fetch(config)
@@ -187,4 +185,3 @@ function PageInit() {
             console.error('Error in PageInit:', error);
         });
 }
-

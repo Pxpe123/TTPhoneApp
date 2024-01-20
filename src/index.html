@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8" />
     <title>Awesome Capacitor App</title>
     <meta name="viewport"
@@ -14,20 +13,7 @@
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
     <script nomodule
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
-    <script type="module">
-        import { SplashScreen } from '@capacitor/splash-screen';
-        SplashScreen.show();
-    </script>
-    <script type="module">
-        import { CapacitorHttp, HttpResponse } from '@capacitor/core';
-
-        window.CapacitorHttp = CapacitorHttp;
-        window.HttpResponse = HttpResponse;
-    </script>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/getEndpointData.js"></script>
-    <script src="./js/getServerData.js"></script>
-
     <meta name="theme-color" content="#31d53d" />
 </head>
 
@@ -63,5 +49,7 @@
         <div class="Main-Footer"></div>
     </div>
 </body>
+<script src="./js/getEndpointData.js"></script>
+<script src="./js/getServerData.js"></script>
 
 </html>
