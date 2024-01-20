@@ -1,0 +1,57 @@
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    transition: left 0.5s ease; /* Add smooth transition */
+}
+
+.menu-btn-shifted {
+  left: calc(25vh); /* Shifted position */
+}
+
+.sidenav {
+  height: 100vh;
+  width: fit-content;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -33vh; /* Initially hidden off-screen */
+  background-color: rgba(34, 34, 34, 0);
+  overflow-x: hidden;
+  padding-top: 5vh;
+  transition: all 0.5s ease; /* Add smooth transition */
+}
+
+
+.sidenav button {
+    margin-top: 3vh;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    width: 25vh;
+    text-align: center;
+    padding: 1.5vh 2vh;
+    border-radius: 12px;
+    border: 2px #fff solid;
+    background: none;
+    color: #818181;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 3vh;
+    transition: color 0.3s;
+}
+
+.sidenav button:hover {
+    color: #f1f1f1;
+}
+
+/* Add a class to close the sidebar when the button is clicked */
+.sidenav-closed {
+  left: 0;
+  background-color: #161616d4;
+}

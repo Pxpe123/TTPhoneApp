@@ -1,6 +1,7 @@
 
 const config = 'assets/configs/config.json'
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+const server = "141.145.202.202";
 const baseUrl1 = 'https://tycoon-';
 const baseUrl2 = '.users.cfx.re';
 
@@ -95,23 +96,15 @@ function GetEndpointName(dataPath, keytype, discordID, server) {
     }
 }
 
-async function GetData(type, keytype, server) {
+async function GetData(type, keytype, servercode) {
     if (privatekey === undefined || privatekey === "") {
         privatekey = await GetTycoonKey(privatekey);
         publickey = await GetTycoonKey(publickey);
     }
 
-    if (keytype === "public") {
-        key = publickey;
-    } else if (keytype === "private") {
-        key = privatekey;
-    } else if (keytype === "none") {
-        key = "";
-    } else {
-        key = privatekey;
-    }
-
     let headerData;
+
+    key = privatekey
 
     switch (keytype) {
         case "private":
@@ -125,24 +118,30 @@ async function GetData(type, keytype, server) {
             break;
     }
 
-    if (server == "Main") {
-        server = "2epova";
-    } else if (server == "Beta") {
-        server = "njyvop";
+    if (servercode == "Main") {
+        servercode = "2epova";
+    } else if (servercode == "Beta") {
+        servercode = "njyvop";
     } else {
-        server = "2epova";
+        servercode = "2epova";
     }
 
-    const url = proxyUrl + baseUrl1 + server + baseUrl2 + type;
 
     try {
-        const response = await fetch(baseUrl1 + server + baseUrl2 + type, {
-            method: 'GET',
-        });
+        const url = baseUrl1 + servercode + baseUrl2 + type;
 
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data (${response.status} ${response.statusText})`);
-        }
+        console.log(key)
+        
+        const apiUrl = `http://${server}:3000?url=${url}`;
+        const fetchOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Tycoon-Key': key
+            }
+        };
+
+        const response = await fetch(apiUrl, fetchOptions);
 
         const data = await response.json();
         return data;
@@ -158,8 +157,6 @@ function GetTycoonKey(type) {
             .then(data => {
                 privatekey = data.privatekey;
                 publickey = data.publickey;
-                console.log(privatekey)
-                console.log(publickey)
                 return type;
             })
             .catch(error => {
@@ -185,3 +182,36 @@ function PageInit() {
             console.error('Error in PageInit:', error);
         });
 }
+
+async function test() {
+    const server = "141.145.202.202";
+    const url = "https://tycoon-2epova.users.cfx.re/status/sotd.json";
+    const apiKey = "L0S8ktFi2WlKaNntwjJZCY8Q6wOwAzggHu0PD";
+
+    const fetchOptions = {
+        method: 'GET',
+        headers: {
+            'X-Tycoon-Key': apiKey,
+            'Content-Type': 'application/json' // Add other headers if needed
+        }
+    };
+
+    const apiUrl = `http://${server}:3000?url=${url}`;
+    try {
+        const response = await fetch(apiUrl, fetchOptions);
+
+        console.log('Response Status:', response.status);
+        console.log('Response Status Text:', response.statusText);
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+        console.log('Response Data:', responseData);
+    } catch (error) {
+        console.error('Error in test:', error.message);
+    }
+}
+
+test();

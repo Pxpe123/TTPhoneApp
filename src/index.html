@@ -8,17 +8,42 @@
         content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="module"
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
     <script nomodule
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/sidenav.css" />
     <meta name="theme-color" content="#31d53d" />
 </head>
 
 <body>
     <capacitor-welcome></capacitor-welcome>
+    <div class="menu-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidenav">
+        <button>
+            <span><i class="fas fa-home"></i> Home</span>
+        </button>
+        <button>
+            <span><i class="fas fa-server"></i> Servers</span>
+        </button>
+        <button>
+            <span><i class="fas fa-briefcase"></i> Business</span>
+        </button>
+        <button>
+            <span><i class="fas fa-hdd"></i> Storage</span>
+        </button>
+        <button>
+            <span><i class="fas fa-car"></i> Dealership</span>
+        </button>
+        <button>
+            <span><i class="fas fa-cog"></i> Settings</span>
+        </button>
+    </div>
     <div class="Main-Block">
         <div class="Main-Top">
         </div>
@@ -48,10 +73,10 @@
                 </div>
             </div>
         </div>
-        <div class="Main-Footer"></div>
     </div>
 </body>
 <script src="./js/getEndpointData.js"></script>
 <script src="./js/getServerData.js"></script>
+<script src="./js/index.js"></script>
 
 </html>
