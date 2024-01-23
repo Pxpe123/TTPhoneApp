@@ -1,5 +1,5 @@
 :root {
-    --background-gradient-start: rgb(2, 2, 2);
+    --background-gradient-start: rgb(27, 27, 27);
     --background-gradient-end: rgb(6, 12, 61);
     --border-radius: 15px; /* Adjusted border-radius */
     --menu-bg-color: rgba(257, 57, 57, 0.2);
@@ -26,7 +26,7 @@
   }
   
   .Main-Block {
-    background-image: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end) 70%);
+    background-image: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end) 130%);
   }
   
   .Main-Top {

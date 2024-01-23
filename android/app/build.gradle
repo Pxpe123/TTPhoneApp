@@ -30,6 +30,8 @@ repositories {
     }
 }
 
+
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
@@ -43,6 +45,7 @@ dependencies {
 }
 
 apply from: 'capacitor.build.gradle'
+apply plugin: 'com.google.gms.google-services'
 
 try {
     def servicesJSON = file('google-services.json')

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "530859882648",
+    "project_id": "ttstats-8bbd0",
+    "storage_bucket": "ttstats-8bbd0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530859882648:android:c8002f2b1ec741a33ab8ed",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCq3_ZjvxS9E5Z4R750LZrGZZF9PtlFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530859882648:android:bde78fb2919ef0a13ab8ed",
+        "android_client_info": {
+          "package_name": "tt.stats.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCq3_ZjvxS9E5Z4R750LZrGZZF9PtlFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

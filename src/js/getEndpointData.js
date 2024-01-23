@@ -1,7 +1,6 @@
 
 const config = 'assets/configs/config.json'
 
-const server = "141.145.202.202";
 const baseUrl1 = 'https://tycoon-';
 const baseUrl2 = '.users.cfx.re';
 
@@ -132,16 +131,16 @@ async function GetData(type, keytype, servercode) {
 
         console.log(key)
         
-        const apiUrl = `http://${server}:3000?url=${url}`;
-        const fetchOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Tycoon-Key': key
-            }
-        };
+            const apiUrl = `http://${server}:3000?url=${url}`;
+            const fetchOptions = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tycoon-Key': key
+                }
+            };
 
-        const response = await fetch(apiUrl, fetchOptions);
+            const response = await fetch(apiUrl, fetchOptions);
 
         const data = await response.json();
         return data;
@@ -182,36 +181,3 @@ function PageInit() {
             console.error('Error in PageInit:', error);
         });
 }
-
-async function test() {
-    const server = "141.145.202.202";
-    const url = "https://tycoon-2epova.users.cfx.re/status/sotd.json";
-    const apiKey = "L0S8ktFi2WlKaNntwjJZCY8Q6wOwAzggHu0PD";
-
-    const fetchOptions = {
-        method: 'GET',
-        headers: {
-            'X-Tycoon-Key': apiKey,
-            'Content-Type': 'application/json' // Add other headers if needed
-        }
-    };
-
-    const apiUrl = `http://${server}:3000?url=${url}`;
-    try {
-        const response = await fetch(apiUrl, fetchOptions);
-
-        console.log('Response Status:', response.status);
-        console.log('Response Status Text:', response.statusText);
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-
-        const responseData = await response.json();
-        console.log('Response Data:', responseData);
-    } catch (error) {
-        console.error('Error in test:', error.message);
-    }
-}
-
-test();

@@ -1,5 +1,5 @@
 {
-  "appId": "com.example.app",
+  "appId": "tt.stats.app",
   "appName": "TTPhoneApp",
   "bundledWebRuntime": false,
   "webDir": "src",
@@ -9,6 +9,9 @@
     },
     "CapacitorHttp": {
       "enabled": true
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
     }
   },
   "server": {
@@ -16,3 +19,4 @@
     "cleartext": true
   }
 }
+

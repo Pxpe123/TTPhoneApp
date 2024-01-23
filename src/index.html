@@ -15,6 +15,7 @@
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/sidenav.css" />
+    <link rel="stylesheet" href="./css/led.css" />
     <meta name="theme-color" content="#31d53d" />
 </head>
 
@@ -53,30 +54,49 @@
         <div class="Main-Body">
             <div class="Servers-Box-Outer">
                 <div class="ServerData-Title">
-                    Server Info
+                    Server
                 </div>
                 <div class="ServerBoxesWrapper">
                     <div class="ServerData-Servers">
+                        <div id="mainLed" class="mainLed"></div>
                         <h3>Main</h3>
                         <p id="MainDXP" style="margin-top: -17px; font-size: 14px;">DXP: </p>
                         <p id="MainUptime">Uptime: 5343</p>
-                        <p id="MainPlayers">Players: 123</p>
-                        <p id="MainFreinds">Friends: </p>
                     </div>
                     <div class="ServerData-Servers">
+                        <div id="betaLed" class="betaLed"></div>
                         <h3>Beta</h3>
                         <p id="BetaDXP" style="margin-top: -17px; font-size: 14px;">DXP: </p>
                         <p id="BetaUptime">Uptime: 123</p>
-                        <p id="BetaPlayers">Players: 123</p>
-                        <p id="BetaFreinds">Friends: </p>
                     </div>
                 </div>
+
+                <button id="hapticTest" onclick="window.hey();">Click Me</button>
             </div>
         </div>
     </div>
+    <div style="display: none;">
+        <div class="ServerData-Servers">
+            <h3>Main</h3>
+            <p id="MainDXP" style="margin-top: -17px; font-size: 14px;">DXP: </p>
+            <p id="MainUptime">Uptime: 123</p>
+            <p id="MainPlayers">Players: 123</p>
+            <p id="MainFreinds">Friends: </p>
+        </div>
+        <div class="ServerData-Servers">
+            <h3>Beta</h3>
+            <p id="BetaDXP" style="margin-top: -17px;  font-size: 14px;">DXP: </p>
+            <p id="BetaUptime">Uptime: 123</p>
+            <p id="BetaPlayers">Players: 123</p>
+            <p id="BetaFreinds">Friends: </p>
+        </div>
+    </div>
 </body>
+<script src="./js/bundle/main.js"></script>
+<script src="./js/serverRequest.js"></script>
 <script src="./js/getEndpointData.js"></script>
+<script src="./js/index.js" type="module"></script>
+<script src="./js/home.js"></script>
 <script src="./js/getServerData.js"></script>
-<script src="./js/index.js"></script>
 
 </html>
