@@ -1,20 +1,14 @@
 async function getServerData(endpointName, serverType, serverText, container) {
-    try {
-        const endpointData = await GetEndpointName(endpointName, serverType, serverText, container);
+    const endpointData = await FetchData(container);
 
-        if (endpointData) {
-            console.log(endpointData);
+    console.log(endpointData)
 
-            const dxp = endpointData.server.dxp;
+    const dxp = endpointData.server.dxp
 
-            const players = endpointData.players.length;
-            const uptime = endpointData.server.uptime;
+    const players = endpointData.players.length;
+    const uptime = endpointData.server.uptime;
 
-            updateUI(container, players, uptime, dxp);
-        }
-    } catch (error) {
-        console.error('Error in getServerData:', error);
-    }
+    updateUI(container, players, uptime, dxp);
 }
 
 function updateUI(container, players, uptime, dxp) {
@@ -43,20 +37,32 @@ async function getAllServerData() {
     await getServerData("Main.Serverplayers", "none", "", "Beta");
 }
 
+async function FetchData(Server) {
+    const apiUrl = `http://${server}:3001/ServerData`;
+    const fetchOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Server': Server
+        }
+    };
 
-let loopCount = 0;
-const maxLoops = 1;
+    const response = await fetch(apiUrl, fetchOptions);
+
+    if (response.ok) {
+        const responseData = await response.json();
+        return responseData;
+    } else {
+        console.error('Failed to fetch data:', response.statusText);
+        return null;
+    }
+}
 
 const intervalId = setInterval(() => {
     getAllServerData();
-    
-    loopCount++;
+}, 4 * 60 * 1000);
 
-    if (loopCount >= maxLoops) {
-        clearInterval(intervalId);
-    }
-}, 1000);
-
+getAllServerData();
 
 function formatTime(milliseconds) {
     const totalSeconds = Math.floor(milliseconds / 1000);
@@ -67,4 +73,3 @@ function formatTime(milliseconds) {
 
     return formattedHours + formattedMinutes;
 }
-

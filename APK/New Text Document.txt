@@ -1,0 +1,3 @@
+keystore pass : password
+Alias : key0
+Password : password

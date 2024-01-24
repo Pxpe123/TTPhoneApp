@@ -98,7 +98,13 @@ function sendTokenToServer(token) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Token sent to server successfully:', data);
+      if (data.message.includes('Setup Required')) {
+        alert('Token sent to server successfully | Setup Required:', data);
+        // Handle the case where setup is required
+      } else {
+        alert('Token sent to server successfully:', data);
+        // Handle the case where setup is not required
+      }
     })
     .catch(error => {
       console.error('Error sending token to server:', error);
