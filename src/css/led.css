@@ -8,7 +8,7 @@
     margin-left: 2vh;
     align-items: center;
     align-self: center;
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 30px rgb(255, 0, 0);
+    box-shadow: 0 0 4vh rgba(255, 0, 0, 0.8), 0 0 4vh rgb(255, 0, 0);
     transition: all 0.8s ease;
   }
   
@@ -22,12 +22,27 @@
     margin-left: 2vh;
     align-items: center;
     align-self: center;
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 30px rgb(255, 0, 0);
+    box-shadow: 0 0 4vh rgba(255, 0, 0, 0.8), 0 0 4vh rgb(255, 0, 0);
     transition: all 0.8s ease;
   }
+  
+  .playerLed {
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: #ff0000;
+    border-radius: 50%;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    margin-left: 2vh;
+    align-items: center;
+    align-self: center;
+    box-shadow: 0 0 4vh rgba(255, 0, 0, 0.8), 0 0 4vh rgb(255, 0, 0);
+    transition: all 0.8s ease;
+  }
+  
   
 
   .Led-checked {
     background-color: rgba(77, 255, 0, 0.8);
-    box-shadow: 0 0 30px rgba(77, 255, 0, 0.8), 0 0 30px rgb(77, 255, 0);
+    box-shadow: 0 0 2vh rgba(77, 255, 0, 0.8), 0 0 2vh rgb(77, 255, 0);
   }
