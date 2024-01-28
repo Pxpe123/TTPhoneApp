@@ -58,6 +58,7 @@ function ngOnInit() {
   PushNotifications.addListener('registration',
     (token) => {
       console.log('Push registration success, token: ' + token.value);
+      window.token = token.value
       sendTokenToServer(token.value);
     }
   );
@@ -72,14 +73,14 @@ function ngOnInit() {
   // Show us the notification payload if the app is open on our device
   PushNotifications.addListener('pushNotificationReceived',
     (notification) => {
-      alert('Push received: ' + JSON.stringify(notification));
+        alert('Push received: ' + JSON.stringify(notification));
     }
   );
 
   // Method called when tapping on a notification
   PushNotifications.addListener('pushNotificationActionPerformed',
     (notification) => {
-      alert('Push action performed: ' + JSON.stringify(notification));
+      alert('Push action performed: ' + JSON.stringify(notification));  
     }
   );
 }
@@ -99,11 +100,9 @@ function sendTokenToServer(token) {
     .then(response => response.json())
     .then(data => {
       if (data.message.includes('Setup Required')) {
-        alert('Token sent to server successfully | Setup Required:', data);
-        // Handle the case where setup is required
+          window.setupneeded = true
       } else {
-        alert('Token sent to server successfully:', data);
-        // Handle the case where setup is not required
+        window.setupneeded = false
       }
     })
     .catch(error => {
@@ -112,3 +111,12 @@ function sendTokenToServer(token) {
 }
 
 ngOnInit();
+
+function displayHtmlContent(htmlContent) {
+
+  const div = document.createElement('div');
+  div.innerHTML = htmlContent;
+
+  document.body.appendChild(div);
+
+}

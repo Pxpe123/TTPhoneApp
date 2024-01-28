@@ -7,13 +7,14 @@
     --button-border-radius: 5px;
     --button-font-size: 16px;
     --button-hover-translateY: 10px;
+    overflow: hidden;
   }
   
   html,
   body {
     padding: 0;
     margin: 0;
-    max-width: 100%;
+    max-width: 100vw;
     height: 100vh;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -23,10 +24,12 @@
     user-select: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
+    background-image: linear-gradient( var(--background-gradient-start), var(--background-gradient-end) 140%);
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .Main-Block {
-    background-image: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end) 130%);
+    background-image: linear-gradient( var(--background-gradient-start), var(--background-gradient-end) 180%);
   }
   
   .Main-Top {
@@ -39,19 +42,57 @@
     background-color: rgba(54, 54, 54, 0.611);
     margin-left: 20%;
     padding-top: 2vh;
-    width: 60%;
+    width: 60vw;
     height: 7vh;
     border-radius: var(--border-radius);
     text-align: center;
     text-decoration: underline;
-    color: aqua;
-    font-size: 4vh;
+    color: #2C70B3;
+    font-size: 5vw;
+    
     margin-bottom: 3vh;
   }
   
+  .loadingScreen {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(var(--background-gradient-start), var(--background-gradient-end) 180%);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.loadingScreen p {
+    color: #C9C9C9;
+    text-align: center;
+    font-size: 10vw;
+    margin: 0;
+}
+
+.loadingScreen-hide {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -9999;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
   .Main-Body  {
     background-color: ;
-    height: 86vh;
+    height: 80vh;
   }
 
   .Servers-Box-Outer {
@@ -59,8 +100,8 @@
     border: 2px #fff solid;
     background-color: rgba(44, 44, 44, 0.538);
     height: fit-content;
-    width: 60%;
-    margin-left: 20%;
+    width: 80vw;
+    margin-left: 10vw;
     display: flex;
     flex-direction: column;
 }
@@ -72,26 +113,33 @@
     text-decoration: underline;
 }
 
+.ServerData-SubTitle {
+  color: rgba(255, 255, 255, 0.712);
+  font-size: 3vw;
+  white-space:nowrap;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: underline;
+}
+
   .ServerBoxesWrapper {
     display: flex;
     justify-content: space-between;
+    margin-left: 5vw;
   }
 
   .ServerData-Servers {
     padding-left: 3vh;
     padding-right: 2vh;
-    padding-bottom: 5px;
+    padding-bottom: 3vh;
     color: white;
     width: 48%;
+    height: fit-content;
 }
 
   .ServerData-Servers h3 {
+    margin-bottom: 3vh;
     font-size: 3vh;
     text-align: left;
     padding-left: 0px;
 }
-
-  .Main-Footer {
-    background-color: aqua;
-    height: 7vh
-  }

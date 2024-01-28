@@ -12,6 +12,22 @@ function toggleLed(mainOnline, betaOnline) {
 
   mainLed.classList.toggle('Led-checked', mainOnline);
   betaLed.classList.toggle('Led-checked', betaOnline);
+
+  if (mainOnline == false) {
+    var mainDxp = document.getElementById('MainDXP');
+    var mainUptime = document.getElementById('MainUptime');
+
+    mainDxp.innerText = 'Server';
+    mainUptime.innerText = "Offline";
+  }
+
+  if (betaOnline == false) {
+    var betaDxp = document.getElementById('BetaDXP');
+    var betaUptime = document.getElementById('BetaUptime');
+
+    betaDxp.innerText = 'Server';
+    betaUptime.innerText = "Offline";
+  }
 }
 
 const server = "141.145.202.202";
@@ -48,7 +64,28 @@ function getServerAlive() {
 
 function setupHome() {
     getServerAlive();
+    getSotd();
+    getAllServerData()
     setTimeout(getServerAlive, 150000);
 }
 
-setupHome();
+function getSotd() {
+    const apiUrl = `http://${server}:3001/SOTD`;
+    var SOTDText = document.getElementById('SOTDText')
+    var SOTD = 
+    fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        SOTDName = data.short;
+        SOTDBonus = data.bonus
+        SOTDText.innerText = `Skill Of The Day: ${SOTDName}  - Bonus: ${SOTDBonus}%`;
+     })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
+}

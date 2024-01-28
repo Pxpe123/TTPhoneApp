@@ -1,57 +1,134 @@
-
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 2;
-    transition: left 0.5s ease; /* Add smooth transition */
-}
-
-.menu-btn-shifted {
-  left: calc(25vh); /* Shifted position */
-}
-
-.sidenav {
-  height: 100vh;
-  width: fit-content;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: -33vh; /* Initially hidden off-screen */
-  background-color: rgba(34, 34, 34, 0);
-  overflow-x: hidden;
-  padding-top: 5vh;
-  transition: all 0.5s ease; /* Add smooth transition */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 
-.sidenav button {
-    margin-top: 3vh;
-    margin-left: 4vh;
-    margin-right: 4vh;
-    width: 25vh;
-    text-align: center;
-    padding: 1.5vh 2vh;
-    border-radius: 12px;
-    border: 2px #fff solid;
-    background: none;
-    color: #818181;
+.navigation {
+    position: relative;
+    width: 100vw;
+    height: 10 vh;
+    background: rgb(56, 56, 56);
     display: flex;
+    justify-content: center;
     align-items: center;
-    cursor: pointer;
-    font-size: 3vh;
-    transition: color 0.3s;
+    border-radius: 10px;
+}
+.navigation ul {
+    display: flex;
+    width: 87.5vw;
+}
+.navigation ul li {
+    position: relative;
+    width: 17.5vw;
+    height: 10vh;
+    list-style: none;
+    z-index: 1;
+}
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 10.7vh;
+    font-size: 5vw;
+    text-align: center;
+    color: #fff;
+    transition: .5s;
+}
+.navigation ul li.active a .icon {
+    transform: translateY(-5.0vh);
+}
+.navigation ul li a .text {
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    font-size: 2.5vw;
+    letter-spacing: .05em;
+    opacity: 0;
+    transform: translateY(2.857vh);
+    transition: .5s;
+}
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(1.4vh);
+}
+.navigation ul li a .circle {
+    position: absolute;
+    display: block;
+    width: 12.5vw;
+    height: 12.5vw;
+    background: transparent;
+    border-radius: 50%;
+    border: 0.5vw solid #fff;
+    transform: translateY(-5.28vh) scale(0);
+}
+.navigation ul li.active a .circle {
+    transition: .5s;
+    transition-delay: .5s;
+    transform: translateY(-5.28vh) scale(1);
 }
 
-.sidenav button:hover {
-    color: #f1f1f1;
+.indicator {
+    position: absolute;
+    top: -38%;
+    width: 15.5vw;
+    height: 15.5vw;
+    background-color: rgb(56, 56, 56);
+    border: 5px solid rgba(15,18,45,255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5.25vw;
+    width: 5vw;
+    height: 2.857vh;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 rgba(15,18,45,255);
+}
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -5.25vw;
+    width: 5vw;
+    height: 2.857vh;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 rgba(15,18,45,255);
+
 }
 
-/* Add a class to close the sidebar when the button is clicked */
-.sidenav-closed {
-  left: 0;
-  background-color: #161616ee;
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(13vw * -0.04));
+}
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(14.4vw * 0.98));
+}
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(14.4vw * 1.98));
+}
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(14.4vw * 3));
+}
+.navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(14.4vw * 4.02));
 }

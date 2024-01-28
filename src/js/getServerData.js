@@ -1,14 +1,23 @@
 async function getServerData(endpointName, serverType, serverText, container) {
     const endpointData = await FetchData(container);
 
-    console.log(endpointData)
+    console.log(endpointData);
 
-    const dxp = endpointData.server.dxp
+    // Check if the 'server' property and 'dxp' property exist in endpointData
+    if (endpointData && endpointData.server && endpointData.server.dxp) {
+        const dxp = endpointData.server.dxp;
+        console.log(dxp);
 
-    const players = endpointData.players.length;
-    const uptime = endpointData.server.uptime;
+        const players = endpointData.players.length;
+        const uptime = endpointData.server.uptime;
 
-    updateUI(container, players, uptime, dxp);
+        updateUI(container, players, uptime, dxp);
+    } else if (endpointData.offlineTimestamp) {
+        console.log('ServerOffline: ', endpointData.offlineTimestamp);
+    }
+     else {
+        console.error('Invalid data format:', endpointData);
+    }
 }
 
 function updateUI(container, players, uptime, dxp) {
