@@ -14,9 +14,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #0c0f26;
+    padding: 4vw;
+    padding-left:  14vw;
+    padding-right: 14vw;
+    border: 0.5vw #eaeaea solid;
+    border-radius: 3vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     animation: slideIn 0.5s ease-in-out; /* Add animation property */
     z-index: 3;
@@ -33,8 +36,14 @@
     }
 }
 
+.modalTitle {
+    color: #bbb;
+    text-align: center;
+}
+
 .close {
     position: absolute;
+    color: #dfdbdb;
     top: 10px;
     right: 15px;
     font-size: 20px;
@@ -43,4 +52,22 @@
 
 .close:hover {
     color: #555;
+}
+
+.modalButtons {
+    display: block;
+    margin: 2vh 0;
+    width: 55vw;
+    text-align: center;
+    padding: 2vh 3vw; 
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #303030;
+    border: 0.5vw #eaeaea solid;
+    border-radius: 1vw;
+    transition: background-color 0.3s;
+}
+
+.modalButtons:hover {
+    background-color: #212121;
 }

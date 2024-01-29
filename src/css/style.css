@@ -1,6 +1,6 @@
 :root {
     --background-gradient-start: rgb(27, 27, 27);
-    --background-gradient-end: rgb(6, 12, 61);
+    --background-gradient-end: #060c3d;
     --border-radius: 15px; /* Adjusted border-radius */
     --menu-bg-color: rgba(257, 57, 57, 0.2);
     --accent-color: rgba(48, 50, 56, 255);
@@ -9,7 +9,7 @@
     --button-hover-translateY: 10px;
     overflow: hidden;
   }
-  
+
   html,
   body {
     padding: 0;
@@ -22,6 +22,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow: hidden;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     background-image: linear-gradient( var(--background-gradient-start), var(--background-gradient-end) 140%);
@@ -31,7 +32,7 @@
   .Main-Block {
     background-image: linear-gradient( var(--background-gradient-start), var(--background-gradient-end) 180%);
   }
-  
+
   .Main-Top {
     background-color: transparent;
     height: 2vh;

@@ -86,3 +86,11 @@
     text-align: center;
     margin-top: 1vh;
 }
+
+.levelbox-main {
+    background-color: black;
+    width: 70vw;
+    height: 30vh;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}

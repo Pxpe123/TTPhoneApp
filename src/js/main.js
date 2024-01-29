@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var userPageBody = document.getElementById('userPage');
     var userPageBtn = document.getElementById('userPageBtn');
 
+    var settingsPageBody = document.getElementById('settingPage');
+    var settingsPageBtn = document.getElementById('settingsPageBtn');
+
+    var myModal = document.getElementById('myModal')
+
     var activePage = 'home'; // Track the active page
 
     homePageBtn.addEventListener('click', function (event) {
@@ -46,13 +51,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 300);
             });
     });
+
+    //MODAL SECTION
+    settingsPageBtn.addEventListener('click', function (event) {
+        if (activePage === 'settings') {
+            event.preventDefault(); // Prevent the default behavior of the link
+            return;
+        }
+
+        loadingScreen.classList.toggle('loadingScreen-hide');
+        fetch('./pages/settings.html')
+            .then(response => response.text())
+            .then(data => {
+                setTimeout(() => {
+                    if (myModal.style.display == "block") {
+                        myModal.style.display = "none";
+                    }
+                    MainBody.innerHTML = data;
+                    loadingScreen.classList.toggle('loadingScreen-hide');
+                    activePage = 'settings';
+                }, 300);
+            });
+    });
 });
 
 var MainBody = document.getElementById('PagesBody');
 var loadingScreen = document.getElementById('loadingScreen');
 
 async function InitialSetup() {
-    fetch('./pages/user.html')
+    fetch('./pages/settings.html')
         .then(response => response.text())
         .then(data => {
             MainBody.innerHTML = data;
