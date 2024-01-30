@@ -79,7 +79,7 @@ var MainBody = document.getElementById('PagesBody');
 var loadingScreen = document.getElementById('loadingScreen');
 
 async function InitialSetup() {
-    fetch('./pages/settings.html')
+    fetch('./pages/home.html')
         .then(response => response.text())
         .then(data => {
             MainBody.innerHTML = data;

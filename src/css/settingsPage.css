@@ -1,0 +1,74 @@
+.setting-option {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.setting-text {
+    margin-left: auto;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Style for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup input {
+    margin-bottom: 10px;
+}
+
+/* Style for the overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Adjustments for readability on dark background */
+label, .setting-text {
+    color: #fff;
+}
+
+.popup {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.popup input {
+    color: #fff;
+    background-color: #333;
+    border: 1px solid #666;
+}
+
+/* Add some padding to the text inside the popup for better readability */
+.popup label {
+    margin-right: 10px;
+}
+
+/* Style for the close button in the popup */
+.popup button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

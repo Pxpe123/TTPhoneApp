@@ -1,3 +1,30 @@
 <div class="Main-Body" id="settingPage">
     <h1>Settings</h1>
+    <div class="setting-option">
+        <label for="dxpNotifications">Dxp Notifications:</label>
+        <input type="checkbox" id="dxpNotifications" checked>
+        <span class="setting-text">Enabled</span>
+    </div>
+    <div class="setting-option">
+        <label for="minDxpNotifications">Min Dxp Notifications:</label>
+        <button onclick="openMinDxpPopup()">Set Min DXP</button>
+        <span class="setting-text" id="minDxpSetting">Not Set</span>
+    </div>
+    <div class="setting-option">
+        <label for="sotdNotifications">SOTD Notifications:</label>
+        <input type="checkbox" id="sotdNotifications" checked>
+        <span class="setting-text">Enabled</span>
+    </div>
+
+    <button>Save Settings</button>
+</div>
+
+<!-- Popup for Min DXP -->
+<div class="overlay" id="minDxpOverlay"></div>
+<div class="popup" id="minDxpPopup">
+    <label for="hours">Hours:</label>
+    <input type="number" id="hours" placeholder="1" min="0" max="99">
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes" placeholder="25" min="0" max="59">
+    <button onclick="closeMinDxpPopup()">Set</button>
 </div>
