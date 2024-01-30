@@ -4,16 +4,16 @@ const loadingScreen = document.getElementById('loadingScreen');
 const myModal = document.getElementById('myModal');
 
 const pages = {
-    'home': { btn: document.getElementById('homePageBtn'), path: './pages/home.html', setup: setupHome },
-    'user': { btn: document.getElementById('userPageBtn'), path: './pages/user.html', setup: setupUserInfo },
-    'server': { btn: document.getElementById('serverPageBtn'), path: './pages/server.html', setup: null },
-    'storage': { btn: document.getElementById('storagePageBtn'), path: './pages/storage.html', setup: null },
-    'dealership': { btn: document.getElementById('dealershipPageBtn'), path: './pages/dealership.html', setup: setupServerPage },    
-    'settings': { btn: document.getElementById('settingsPageBtn'), path: './pages/modal/settings.html', setup: null }
+    'home':       { btn: document.getElementById('homePageBtn'),       path: './pages/home.html',           setup: setupHome },
+    'user':       { btn: document.getElementById('userPageBtn'),       path: './pages/user.html',           setup: setupUserInfo },
+    'server':     { btn: document.getElementById('serverPageBtn'),     path: './pages/server.html',         setup: null },
+    'storage':    { btn: document.getElementById('storagePageBtn'),    path: './pages/storage.html',        setup: null },
+    'dealership': { btn: document.getElementById('dealershipPageBtn'), path: './pages/dealership.html',     setup: setupServerPage },    
+    'settings':   { btn: document.getElementById('settingsPageBtn'),   path: './pages/modal/settings.html', setup: null }
 };
 
 let activePage = 'home';
-
+ 
 function loadPage(page) {
     if (activePage === page) {
         event.preventDefault();
