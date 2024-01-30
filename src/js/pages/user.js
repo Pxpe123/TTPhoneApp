@@ -30,7 +30,7 @@ async function getUserData() {
         }
     };
     response = await fetch(userdataURL, fetchOptions);
-    response = await response.json(); // Await the JSON parsing
+    response = await response.json();
     console.log(response);
 }
 
@@ -42,7 +42,8 @@ function setUserData() {
     playerName = response.userData.UserName;
     playerIcon = response.userData.playerIcon;
 
-    //userInfoText.innerText = playerStatus + " | "+ playerName;
+    userInfoText.innerText = `${playerStatus} | ${playerName}`;
+
     userIcon.src = playerIcon;
     userIdText.innerText = "UserID: " + playerId
 }

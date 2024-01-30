@@ -45,10 +45,10 @@
     margin-left: 2vw;
 }
 
-.playerName-text {
+.playerName-box p {
     color: #ffffff;
-    font-size: 3vw;
-    font-weight: 400;
+    font-size: 2vw;
+    font-weight: 200;
     text-wrap: nowrap;
     text-align: center;
     margin-top: 0.4vh;
