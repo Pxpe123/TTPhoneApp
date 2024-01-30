@@ -17,9 +17,8 @@ function start() {
 
 const hapticsVibrateMedium = async () => {
   try {
-    // Trigger a 2-second medium vibration
     await Haptics.vibrate({
-      duration: 2000, // Duration in milliseconds
+      duration: 2000,
       style: ImpactStyle.Medium,
     });
 

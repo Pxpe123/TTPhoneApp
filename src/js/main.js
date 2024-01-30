@@ -8,7 +8,7 @@ const pages = {
     'user':       { btn: document.getElementById('userPageBtn'),       path: './pages/user.html',           setup: setupUserInfo },
     'server':     { btn: document.getElementById('serverPageBtn'),     path: './pages/server.html',         setup: null },
     'storage':    { btn: document.getElementById('storagePageBtn'),    path: './pages/storage.html',        setup: null },
-    'dealership': { btn: document.getElementById('dealershipPageBtn'), path: './pages/dealership.html',     setup: setupServerPage },    
+    'dealership': { btn: document.getElementById('dealershipPageBtn'), path: './pages/dealership.html',     setup: setupDealershipPage},    
     'settings':   { btn: document.getElementById('settingsPageBtn'),   path: './pages/modal/settings.html', setup: null }
 };
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function InitialSetup() {
     try {
-        const response = await fetch(pages.home.path);
+        const response = await fetch(pages.dealership.path);
         const data = await response.text();
         MainBody.innerHTML = data;
         await new Promise(resolve => setTimeout(resolve, 300));

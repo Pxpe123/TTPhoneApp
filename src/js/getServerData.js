@@ -3,7 +3,6 @@ async function getServerData(endpointName, serverType, serverText, container) {
 
     console.log(endpointData);
 
-    // Check if the 'server' property and 'dxp' property exist in endpointData
     if (endpointData && endpointData.server && endpointData.server.dxp) {
         const dxp = endpointData.server.dxp;
         console.log(dxp);

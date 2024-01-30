@@ -46,7 +46,6 @@
                 setupSubmit.classList.toggle('setup-failed');  
                 setupUserId.classList.toggle('setup-failed');
             
-                // Use setTimeout with a callback function
                 setTimeout(() => {
                     setupSubmit.classList.remove('setup-failed');  
                     setupUserId.classList.remove('setup-failed');

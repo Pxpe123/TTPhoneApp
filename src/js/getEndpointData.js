@@ -11,10 +11,10 @@ fetch(config)
     if (!response.ok) {
       throw new Error(`Failed to fetch config (${response.status} ${response.statusText})`);
     }
-    return response.json(); // This returns another promise
+    return response.json();
   })
   .then(json => {
-    console.log(json); // Now you can work with the JSON data
+    console.log(json);
   })
   .catch(error => {
     console.error('Error fetching config:', error);
