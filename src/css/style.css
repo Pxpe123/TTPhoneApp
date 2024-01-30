@@ -92,8 +92,9 @@
 }
 
   .Main-Body  {
-    background-color: ;
     height: 80vh;
+    color:#ffffff;
+    text-align: center;
   }
 
   .Servers-Box-Outer {
