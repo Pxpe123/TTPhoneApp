@@ -6,7 +6,9 @@ const myModal = document.getElementById('myModal');
 const pages = {
     'home': { btn: document.getElementById('homePageBtn'), path: './pages/home.html', setup: setupHome },
     'user': { btn: document.getElementById('userPageBtn'), path: './pages/user.html', setup: setupUserInfo },
-    'server': { btn: document.getElementById('serverPageBtn'), path: './pages/server.html', setup: setupServerPage },
+    'server': { btn: document.getElementById('serverPageBtn'), path: './pages/server.html', setup: null },
+    'storage': { btn: document.getElementById('storagePageBtn'), path: './pages/storage.html', setup: null },
+    'dealership': { btn: document.getElementById('dealershipPageBtn'), path: './pages/dealership.html', setup: setupServerPage },    
     'settings': { btn: document.getElementById('settingsPageBtn'), path: './pages/modal/settings.html', setup: null }
 };
 
@@ -53,9 +55,6 @@ async function InitialSetup() {
         const data = await response.text();
         MainBody.innerHTML = data;
         await new Promise(resolve => setTimeout(resolve, 300));
-        if (myModal.style.display == "block") {
-            myModal.style.display = "none"
-        }
         loadingScreen.classList.toggle('loadingScreen-hide');
         setupHome();
         activePage = 'home';
