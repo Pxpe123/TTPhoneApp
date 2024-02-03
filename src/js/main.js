@@ -17,7 +17,7 @@ const pages = {
   server: {
     btn: document.getElementById("serverPageBtn"),
     path: "./pages/server.html",
-    setup: null,
+    setup: setupServerPage,
   },
   storage: {
     btn: document.getElementById("storagePageBtn"),
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function InitialSetup() {
   try {
-    const response = await fetch(pages.home.path);
+    const response = await fetch(pages.server.path);
     const data = await response.text();
     MainBody.innerHTML = data;
     await new Promise((resolve) => setTimeout(resolve, 300));

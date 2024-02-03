@@ -23,6 +23,7 @@ async function getDealershipJson() {
 let timestampValue;
 
 function CreateDynamicBoxes() {
+  document.getElementById("dealershipInnerPage").innerHTML = "";
   Object.keys(response).forEach(function (category) {
     if (category === "timestamp") {
       // If the category is timestamp, save the value
